@@ -160,9 +160,9 @@ public class SensorNetworkGraph extends JPanel implements Runnable {
            Ellipse2D.Double shape = new Ellipse2D.Double(x, y, ovalW, ovalH);
            for (int dg: dataGens){
                if(i+1==dg){
-                   x = graphPoints.get(i).x - (ovalSize+4) / 2;
-                   y = graphPoints.get(i).y - (ovalSize+4) / 2;
-                   shape = new Ellipse2D.Double(x, y, ovalW+4, ovalH+4);
+                   x = graphPoints.get(i).x - (ovalSize+5) / 2;
+                   y = graphPoints.get(i).y - (ovalSize+5) / 2;
+                   shape = new Ellipse2D.Double(x, y, ovalW+5, ovalH+5);
                    g2.fill(shape);
                }
            }

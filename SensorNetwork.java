@@ -89,20 +89,32 @@ public class SensorNetwork {
 
 		for(int i: adjacencyList1.keySet()) {
 			System.out.print(i);
+			System.out.print(": {");
+			int adjSize = adjacencyList1.get(i).size();
+
 			if(!adjacencyList1.isEmpty()){
+                int adjCount = 0;
 				for(int j: adjacencyList1.get(i)) {
-					System.out.print("->" + j);
+                    adjCount+=1;
+				    if(adjCount==adjSize){
+                        System.out.print(j);
+                    } else {
+                        System.out.print(j + ", ");
+                    }
 				}
 			}
-			System.out.println();
+			System.out.println("}");
 			}
 
 		sensor.executeDepthFirstSearchAlg(width, height, adjacencyList1);
+        System.out.println();
 
+        System.out.println("Sensor Network Edges with Distance, Cost and Capacity");
 		for (Link link : links.values()){
 		    link.setCapacity(rand.nextInt(capacityRandomRange+1) + minCapacity);
 		    System.out.println(link.toString());
         }
+        System.out.println();
 
         StringBuilder dijkastra_input = new StringBuilder();
 		for (Link link: links.values()){
@@ -121,12 +133,13 @@ public class SensorNetwork {
         WeighedDigraph graph;
         graph = new WeighedDigraph(fileName);
         // Print graph
-        System.out.print("Representation of WeighedDigraph\n");
-        System.out.print(graph);
-        System.out.print("\n");
+//        System.out.print("Representation of WeighedDigraph\n");
+//        System.out.print(graph);
+//        System.out.print("\n");
 
         DijkstraFind finder = new DijkstraFind(graph);
 
+        System.out.print("Min Cost Flow Graph: Edge, Cost, Capacity");
         for(int dg: dataGens){
             for(int sn: storageNodes) {
                 ArrayList<Integer> path = finder.shortestPath(dg, sn);
@@ -171,7 +184,6 @@ public class SensorNetwork {
         }
 
         System.out.println();
-        System.out.println();
 
         StringBuilder output = new StringBuilder();
 
@@ -190,7 +202,14 @@ public class SensorNetwork {
                     append(path.getPath().get(path.getPath().size()-1)).append(" ").append("0 ").
                     append((int) path.getCapacity()).append(" ").append(path.getCost()).append("\n");
         }
+        System.out.println("Generated Input file for cs2-4.6 program:");
         System.out.println(output);
+
+        fileName = "outinput.inp";
+        writer = new BufferedWriter(new FileWriter(fileName));
+        writer.write(output.toString());
+
+        writer.close();
 	}
 
 	void executeDepthFirstSearchAlg(double width, double height, Map<Integer, Set<Integer>> adjList) {
