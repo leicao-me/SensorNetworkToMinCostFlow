@@ -4,10 +4,9 @@ Research Project for CSC500 Research Method - CSUDH
 This is a tentative commit. A code cleaning will be done later.
 
 How to download:
-Note:
-git clone https://github.com/leicao-me/SensorNetworkToMinCostFlow.git
-or copy this to the browser:
-https://github.com/leicao-me/SensorNetworkToMinCostFlow/archive/master.zip
+1. $ git clone https://github.com/leicao-me/SensorNetworkToMinCostFlow.git
+2. or copy this to the browser:
+   https://github.com/leicao-me/SensorNetworkToMinCostFlow/archive/master.zip
 
 How to run:
 
