@@ -5,6 +5,7 @@ This is a tentative commit. A code cleaning will be done later.
 
 How to download:
 $ git clone https://github.com/leicao-me/SensorNetworkToMinCostFlow.git
+
 or copy this to the browser:
 https://github.com/leicao-me/SensorNetworkToMinCostFlow/archive/master.zip
 
