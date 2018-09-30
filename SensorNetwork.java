@@ -202,7 +202,7 @@ public class SensorNetwork {
                     append(path.getPath().get(path.getPath().size()-1)).append(" ").append("0 ").
                     append((int) path.getCapacity()).append(" ").append(path.getCost()).append("\n");
         }
-        System.out.println("Generated Input file for cs2-4.6 program:");
+        System.out.println("Generated Input file for cs2-4.6 program:(pls refer to ourinput.inp in the folder");
         System.out.println(output);
 
         fileName = "outinput.inp";
@@ -211,6 +211,15 @@ public class SensorNetwork {
 
         writer.close();
 	}
+
+    double getCost(double l){
+        final int K = 512; // k = 512B (from paper0)
+        final double E_elec = 100 * Math.pow(10,-9); // E_elec = 100nJ/bit (from paper1)
+        final double Epsilon_amp = 100 * Math.pow(10,-12); // Epsilon_amp = 100 pJ/bit/squared(m) (from paper1)
+        double Etx = E_elec * K + Epsilon_amp * K * l * l; // Sending energy consumption
+        double Erx = E_elec * K; // Receiving energy consumption
+        return Etx + Erx; // return the sum of sending and receiving energy
+    }
 
 	void executeDepthFirstSearchAlg(double width, double height, Map<Integer, Set<Integer>> adjList) {
 		System.out.println("\nExecuting DFS Algorithm");
@@ -344,12 +353,5 @@ public class SensorNetwork {
 		}
 	}
 
-	double getCost(double l){
-        final int K = 512; // k = 512B (from paper0)
-        final double E_elec = 100 * Math.pow(10,-9); // E_elec = 100nJ/bit (from paper1)
-        final double Epsilon_amp = 100 * Math.pow(10,-12); // Epsilon_amp = 100 pJ/bit/squared(m) (from paper1)
-        double Etx = E_elec * K + Epsilon_amp * K * l * l; // Sending energy consumption
-        double Erx = E_elec * K; // Receiving energy consumption
-        return Etx + Erx; // return the sum of sending and receiving energy
-    }
+
 }
