@@ -99,26 +99,26 @@ public class DijkstraFind {
             }
             return 0;
         }
-    };
-
-    public static void main(String args[]) {
-        WeighedDigraph graph;
-
-        try {
-            graph = new WeighedDigraph(args[0]);
-            // Print graph
-            System.out.print("Representation of WeighedDigraph\n");
-            System.out.print(graph);
-            System.out.print("\n");
-
-            DijkstraFind finder = new DijkstraFind(graph);
-
-            // Print tests
-            System.out.print("TESTS\n");
-            System.out.print("Test 1/Yellow: 4 -> 26: " + finder.shortestPath(4, 26) + "\n");
-            System.out.print("Test 2/Blue: 4 -> 19: " + finder.shortestPath(4, 19) + "\n");
-            System.out.print("Test 3/Green: 3 -> 28: " + finder.shortestPath(3, 28) + "\n");
-
-        } catch (IOException e) {}
     }
+
+//     public static void main(String args[]) {
+//         WeighedDigraph graph;
+
+//         try {
+//             graph = new WeighedDigraph(args[0]);
+//             // Print graph
+//             System.out.print("Representation of WeighedDigraph\n");
+//             System.out.print(graph);
+//             System.out.print("\n");
+
+//             DijkstraFind finder = new DijkstraFind(graph);
+
+//             // Print tests
+//             System.out.print("TESTS\n");
+//             System.out.print("Test 1/Yellow: 4 -> 26: " + finder.shortestPath(4, 26) + "\n");
+//             System.out.print("Test 2/Blue: 4 -> 19: " + finder.shortestPath(4, 19) + "\n");
+//             System.out.print("Test 3/Green: 3 -> 28: " + finder.shortestPath(3, 28) + "\n");
+
+//         } catch (IOException e) {}
+//     }
 }
