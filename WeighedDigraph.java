@@ -134,15 +134,15 @@ public class WeighedDigraph {
      * Graph Tests
      * @param args
      */
-    public static void main(String args[]) {
-        WeighedDigraph graph = new WeighedDigraph();
+//     public static void main(String args[]) {
+//         WeighedDigraph graph = new WeighedDigraph();
 
-        WeighedDigraphEdge edge1 = new WeighedDigraphEdge(1, 2, 2.0);
-        WeighedDigraphEdge edge2 = new WeighedDigraphEdge(2, 1, 2.0);
+//         WeighedDigraphEdge edge1 = new WeighedDigraphEdge(1, 2, 2.0);
+//         WeighedDigraphEdge edge2 = new WeighedDigraphEdge(2, 1, 2.0);
 
-        graph.addEdge(edge1);
-        graph.addEdge(edge2);
+//         graph.addEdge(edge1);
+//         graph.addEdge(edge2);
 
-        System.out.print(graph);
-    }
+//         System.out.print(graph);
+//     }
 }
