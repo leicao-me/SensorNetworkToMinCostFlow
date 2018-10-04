@@ -16,7 +16,7 @@ $ javac *.java
 2. Run
 $ java SensorNetwork
 
-**Note:
+## Note:
 1. The output in saved to file: outinput.inp
 2. All the inputs now is hard coded. It will change to take user input later.
 3. All edges are assumed to have same minimum capacity
